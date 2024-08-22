@@ -5,7 +5,7 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { Client, Collection, IntentsBitField, Partials, EmbedBuilder } = require('discord.js');
 
-const clientId = '1268929064232554508'; // Replace with your bot's client ID
+const clientId = '1159046385384046643'; // Replace with your bot's client ID
 
 const client = new Client({
   intents: [
@@ -88,7 +88,7 @@ client.once('ready', async () => {
     .setDescription('A bot just became ready')
     .setTimestamp();
 
-  const logChannel = await client.channels.fetch('1247263261452275712');
+  const logChannel = await client.channels.fetch('989174284305985587');
   await logChannel.send({ embeds: [embedReady] });
 });
 

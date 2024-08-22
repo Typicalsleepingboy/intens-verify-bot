@@ -95,7 +95,7 @@ module.exports = {
       .setCustomId(`reject-${verificationData.discordId}`)
       .setLabel('❌ Reject') // Emoji or text label
       .setStyle(ButtonStyle.Danger);
-
+      
     const row = new ActionRowBuilder().addComponents(approveButton, rejectButton);
     const instagramAttachment = new AttachmentBuilder(screenshotInstagram.url, { name: 'instagram_screenshot.png' });
     const twitterAttachment = new AttachmentBuilder(screenshotTwitter.url, { name: 'twitter_screenshot.png' });
@@ -112,5 +112,8 @@ module.exports = {
       .setColor('#9883ff');
 
     await interaction.followUp({ embeds: [responseEmbed], ephemeral: false });
+
+    // Log the usage of the command
+    console.log(`User ${interaction.user.tag} (${interaction.user.id}) used the /verifyintens command.`);
   }
 };
